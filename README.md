@@ -1,6 +1,6 @@
 # pg2kd
 
-Docker build of postgresql-9.6 changing the dimension limit for the cube extension, raising it to 2000.
+Docker build of postgresql-11.1 changing the dimension limit for the cube extension, raising it to 2000.
 
 This is needed to be able to work with words embedding with postgres.
 
@@ -22,22 +22,20 @@ vectors with more than 100 dimensions.
 If you are using 101+ dimensions vectors with postgres currently, know that you won't be able to restore
 your backups (and not upgrade postgres if you usually do so through dump/import) :)
 
-
-
 ## Download
 
-The image dockerhub page is [here](https://hub.docker.com/r/lisitsky/postgres-2kd).
+The image dockerhub page is [here](https://hub.docker.com/r/kaivi/postgres-2kd).
 
 To pull it:
 
 ```
-docker pull lisitsky/postgres-2kd
+docker pull kaivi/postgres-2kd
 ```
 
 
 ## Is it safe?
 
-I'll tell you that in a few months :)
+Not sure, ask the guy I've forked it from – https://github.com/lisitsky
 
 But patching the hardcoded limit is [the recommended way in postgres doc](https://www.postgresql.org/docs/9.5/static/cube.html#AEN169535).
 
