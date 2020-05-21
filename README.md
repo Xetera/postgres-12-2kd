@@ -1,6 +1,6 @@
 # pg2kd
 
-Docker build of postgresql-11.1 changing the dimension limit for the cube extension, raising it to 2000.
+Docker build of postgresql-12.3 changing the dimension limit for the cube extension, raising it to 2000.
 
 This is needed to be able to work with words embedding with postgres.
 
