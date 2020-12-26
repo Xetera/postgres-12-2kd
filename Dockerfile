@@ -1,10 +1,10 @@
-FROM postgres:12.3
+FROM postgres:13.1
 MAINTAINER Xetera <me@xetera.dev>
 
-ENV PG_VERSION 12.3
+ENV PG_VERSION 13.1
 
 RUN set -xe  \
-    && apt-get update && apt-get install -y build-essential curl postgresql-server-dev-12 \
+    && apt-get update && apt-get install -y build-essential curl postgresql-server-dev-13 \
     && mkdir /build \
     && curl https://ftp.postgresql.org/pub/source/v$PG_VERSION/postgresql-$PG_VERSION.tar.bz2 \
             -o /build/postgresql-$PG_VERSION.tar.bz2 \
@@ -13,5 +13,5 @@ RUN set -xe  \
     && sed -i 's/#define CUBE_MAX_DIM (100)/#define CUBE_MAX_DIM (2000)/' cubedata.h \
     && USE_PGXS=true make && USE_PGXS=true make install \
     && rm -rf /build/ \
-    && apt-get purge -y build-essential curl postgresql-server-dev-12 \
+    && apt-get purge -y build-essential curl postgresql-server-dev-13 \
     && apt-get autoremove -y
