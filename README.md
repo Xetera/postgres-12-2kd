@@ -24,12 +24,12 @@ your backups (and not upgrade postgres if you usually do so through dump/import)
 
 ## Download
 
-The image dockerhub page is [here](https://hub.docker.com/r/kaivi/postgres-2kd).
+The image dockerhub page is [here](https://hub.docker.com/r/xetera/postgres-13-2kd).
 
 To pull it:
 
 ```
-docker pull kaivi/postgres-2kd
+docker pull xetera/postgres-13-2kd
 ```
 
 
